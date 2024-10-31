@@ -1,4 +1,4 @@
-import MissionModel from "../Models/MissionModel"
+import MissionModel from "../Models/MissionModel";
 import Mission from "./Mission";
  
 interface Props {
