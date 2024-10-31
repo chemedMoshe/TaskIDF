@@ -1,6 +1,6 @@
 import MissionModel from "../Models/MissionModel"
-import Mission from "./Mission"
-
+import Mission from "./Mission";
+ 
 interface Props {
     allMissions:MissionModel[]
     setCopy:(copy:MissionModel[])=>void
