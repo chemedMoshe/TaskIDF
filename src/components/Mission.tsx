@@ -28,12 +28,16 @@ export default function Mission({ mission, allMissions, setCopy }: Props) {
        
         const index = status.indexOf(mission.status)
         const newStatus = status[index + 1]
+        console.log(newStatus);
+        
         try {
-            const res = await fetch(`${BASE_URL}apikey=${MY_KEY}${newStatus}/progress/id=${mission._id}`, {
+            const res = await fetch(`${BASE_URL}apikey=${MY_KEY}/progress/${mission._id}`, {
                 method: "POST",
                 
             })
             const data = await (res.json());
+            console.log(data);
+            
             setCopy(allMissions.filter(m => m._id != data._id))
         }
         catch (err) {
