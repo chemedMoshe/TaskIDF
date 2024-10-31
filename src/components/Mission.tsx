@@ -31,7 +31,7 @@ export default function Mission({ mission, allMissions, setCopy }: Props) {
         console.log(newStatus);
         
         try {
-            const res = await fetch(`${BASE_URL}apikey=${MY_KEY}/${newStatus}/progress/id=${mission._id}`, {
+            const res = await fetch(`${BASE_URL}apikey=${MY_KEY}/progress=${newStatus}/id=${mission._id}`, {
                 method: "POST",
                 
             })
