@@ -9,6 +9,9 @@ interface Props {
 }
 export default function Mission({ mission, allMissions, setCopy }: Props) {
     const [err, setErr] = useState<string>('')
+    
+    const [style, setStyle] = useState<{}>({backgroundColor: "red"})
+    
     const deleteMission = async () => {
         setErr('')
         try {
@@ -28,7 +31,13 @@ export default function Mission({ mission, allMissions, setCopy }: Props) {
        
         const index = status.indexOf(mission.status)
         const newStatus = status[index + 1]
-        console.log(newStatus);
+       
+        newStatus == StatusMisin.Completed &&  setStyle({backgroundColor: "green"}) 
+        
+        newStatus == StatusMisin.Progress && setStyle({backgroundColor: "orange"}) 
+        
+        newStatus == StatusMisin.Pending &&  setStyle({backgroundColor: "red"})
+       
         
         try {
             const res = await fetch(`${BASE_URL}apikey=${MY_KEY}/progress/${mission._id}`, {
@@ -45,7 +54,7 @@ export default function Mission({ mission, allMissions, setCopy }: Props) {
         }
     }
     return (
-        <div>
+        <div className="item" style={style}>
             <h1>{mission.name}</h1>
             <h3>{mission.status}</h3>
             <h3>{mission.priority}</h3>

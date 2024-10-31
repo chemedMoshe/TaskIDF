@@ -33,7 +33,6 @@ export default function AddMissions({  setCopy , allMissions}: Props) {
    }
         async function AddNewMission() {
             setError("")
-            console.log(name, status, priority, description);
             
             if(name === "" || status === "" || priority === "" || description === "") {
       setError("Please fill in the task details")
@@ -48,12 +47,14 @@ export default function AddMissions({  setCopy , allMissions}: Props) {
         return (
             <div className="AddMissions">
                 <div className="NameInput">
+                 <label> Name:  
                 <input type="text" placeholder="Name" onChange={(e) => setName(e.target.value)} />
+                </label>
                 </div>
                 <div className="StatusInput">
                 <label>
                     status:
-                    <select name="selectedStatus" onChange={(e) => setStatus(e.target.value)}>
+                    <select name="selectedStatus" onChange={(e) => setStatus(e.target.value )}>
                        
                         <option value="Pending" >Pending</option>
                         <option value="In Progress">In Progress</option>
@@ -61,19 +62,23 @@ export default function AddMissions({  setCopy , allMissions}: Props) {
                     </select>
                 </label>
                </div>
+               
                <div className="PriorityInput">
                 <label>
                     Priority:
                 <select name="selectedPriority" onChange={(e) => setPriority(e.target.value)} >
                
-                <option value="Low" >Low</option>
+                <option value="Low">Low</option>
                 <option value="Medium">Medium</option>
                 <option value="High">High</option>
                 </select>
                 </label>
                 </div>
+                
                 <div className="DescriptionInput">
+                <label>Description:
                 <input type="text" placeholder="Description" onChange={(e) => setDescription(e.target.value)} />
+                </label>
                 </div>
                 <div className="AddButton"> 
                 <button onClick={AddNewMission}>Add Mission</button>

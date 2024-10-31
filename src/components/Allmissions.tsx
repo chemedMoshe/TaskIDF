@@ -6,8 +6,9 @@ interface Props {
     setCopy:(copy:MissionModel[])=>void
 }
 export default function Allmissions({allMissions,setCopy}:Props) {
+    
   return (
-    <div>
+    <div className="Missions">
       {allMissions.map((mission) => (
         <Mission key={mission._id} mission={mission} allMissions={allMissions} setCopy={setCopy}/>
       ))}
