@@ -36,7 +36,7 @@ export default function AddMissions({  setCopy , allMissions}: Props) {
             setError("")
             console.log(name, status, priority, description);
             
-            if (name === "" || status === "" || priority === "" || description === "") {
+            if(name === "" || status === "" || priority === "" || description === "") {
       setError("Please fill in the task details")
       
       return
