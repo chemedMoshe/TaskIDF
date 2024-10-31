@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 #root{
     display: flex;
     flex-direction: column;
@@ -7,19 +12,22 @@
     width: 100vw;
 }
 .App{
-    padding-top: 6rem;
+    padding-top: 3rem;
     width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 10px;
     
 }
 .AddMission{
-   
+    background-color: rgb(243, 224, 162);
+    width: 100%;
     
 }
 .AddMissions{
+    padding: 0.5rem;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -27,9 +35,28 @@
     justify-content: center;
     gap: 10px;
 }
-.NameInput{
+.NameInput,
+.StatusInput,
+.PriorityInput,
+.DescriptionInput{
     width: 100%;
-    border-radius: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+input{
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    border: 1px solid black;
+    font-size: 1.5rem;
+}
+select{
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    border: 1px solid black;
+    font-size: 1.5rem;
 }
 .AllMissions{
     width: 100%;
