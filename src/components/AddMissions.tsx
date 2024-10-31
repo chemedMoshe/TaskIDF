@@ -28,8 +28,7 @@ export default function AddMissions({  setCopy , allMissions}: Props) {
         console.log(data)
     }
     catch(err){
-        console.log(err);
-        
+        console.log(err); 
     }
    }
         async function AddNewMission() {
